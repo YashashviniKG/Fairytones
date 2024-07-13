@@ -1,0 +1,42 @@
+{%extends "basic.html"%}
+{% block title%}All Songs{% endblock %}
+
+{% block body %}
+
+{% if message%}
+<script>
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '{{message}}',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="padding-top: 3%;">
+            <img src="/media/{{song.image}}" alt="" height="250px" width="350px">
+        </div>
+        <div class="col-md-6">
+        <h2 style="padding-top: 6%; font-weight: 550; color:blueviolet;">Playing: {{song.name}}</h2>
+        <h5 style="padding-top: 2%; font-weight: 550;">Category: {{song.tags}}</h4>
+        <h5 style="padding-top: 2%; font-weight: 550;">Artist:<a href="{{song.singer}}" target="_blank">{{song.singer}}</a></h4>
+            <audio controls>
+                <source src="{{ song.song.url }}" type="audio/mp3"> 
+            </audio>
+            <div style="padding-top: 2%;">
+            <div>  
+            <form action="/fairytones/playlist" method="POST"> {% csrf_token %}
+                <input type="hidden" name="video_id" value="{{song.song_id}}">   
+               <button type="submit" class="btn btn-outline-success">Add to Playlist</button>
+            </form>
+               
+             </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
