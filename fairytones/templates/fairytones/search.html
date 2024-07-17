@@ -1,0 +1,28 @@
+{% extends "basic.html" %} {% block title %}Search Results{% endblock %} {% block body %}
+<style>
+    body {
+        background-color: #F1F8E8;
+    }
+</style>
+<div class="container" style="padding-top: 2%; background-color: #F1F8E8;">
+    <h2>Search Results for "{{ query }}"</h2>
+    {% if songs %} {% for song in songs %}
+    <div class="card mb-3" style="max-width: 940px; padding-top: 0%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="/media/{{ song.image }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: black; font-weight: 600;">{{ song.name }}</h5>
+                    <p class="card-text">{{ song.tags }}</p>
+                    <a href="{% url 'songpost' song.song_id %}" class="btn btn-success">Play</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %} {% else %}
+    <p>No songs found for "{{ query }}"</p>
+    {% endif %}
+</div>
+{% endblock %}
