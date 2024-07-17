@@ -1,8 +1,6 @@
-credits also given to yashashvini kg
-this is a partially completed project although putogether at the last minute it  was fun hope to revisit and take it to the next level 
-future changes we are thinking of maling
-styling the website
-song recommendation based on ur liked songs,similar songs ,songs by same artist and same lamguage
-artist pages
-like button for song
-song shuffle in playlist
+Credits also given to Sudhanva V Hebbar.
+This is a partially completed project and put together at the last minute. 
+It was fun hope to revisit and take it to the next level 
+Future changes we are thinking of makng are;
+Song recommendation based on liked songs,similar songs,songs by same artist,same lamguage.
+Artist pages and lyrics,like button for the song and song shuffle in playlist.
